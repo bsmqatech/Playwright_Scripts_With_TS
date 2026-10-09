@@ -1,0 +1,25 @@
+import{ test, BrowserContext, Page } from "@playwright/test";
+
+test('multiusertest', async ({browser}) =>
+{
+
+    let ctx1:BrowserContext = await browser.newContext();
+    let ctx2:BrowserContext =  await browser.newContext();
+
+    let page1: Page = await ctx1.newPage();
+    let page2: Page = await ctx2.newPage();
+
+    await page1.goto('https://google.com');
+    await page2.goto("https://www.amazon.com");
+
+   await  page1.pause();
+    await page2.pause();
+
+}
+
+
+
+
+
+
+)
